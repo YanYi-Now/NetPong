@@ -9,7 +9,7 @@ Netpong is a **Dockerized, full-stack, Single Page Application**.
 ### Core Functions
   * **Real-time Remote Matches**: Delivers seamless online matches by synchronising players to a server-side game engine
   * **Tournament System**: Users can create and/or join tournaments featuring ELO-based matchmaking
-  * **User Profiles & Social Features**: Users can register individual accounts, follow friends, and view each other's online status.
+  * **User Features**: Users can register individual accounts, follow friends, and view each other's online status.
   * **Performance Analytics**: Automatically generated dashboards display each player's gaming statistics and match history.
   
 ### Security 
