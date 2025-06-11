@@ -1,0 +1,12 @@
+src/frontend/node_modules/
+src/backend/node_modules/
+src/pong-cli/node_modules/
+
+src/backend/.sqlite
+
+src/nginx/ssl/*.crt
+src/nginx/ssl/*.key
+
+.env
+.DS_Store
+.vscode/

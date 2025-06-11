@@ -1,0 +1,90 @@
+services:
+
+#---------------------------------BACKEND--------------------------------
+  backend:
+    container_name: netpong_backend
+    image: netpong_backend
+    build:
+      context: ./src/backend
+      dockerfile: Dockerfile
+    env_file:
+      - .env
+    networks:
+      - NetPong
+    volumes:
+      - netpong_sqlite_data:/db # Updated volume mount
+      - netpong_avatar_data:/usr/src/app/public/uploads/avatars # Updated volume mount
+    restart: always
+
+#--------------------------------FRONTEND--------------------------------
+
+  frontend:
+    container_name: netpong_frontend
+    image: netpong_frontend 
+    build:
+      context: ./src/frontend
+      dockerfile: Dockerfile
+      args:
+        - BASE_API_URL=${BASE_API_URL}
+        - BASE_WSS_URL=${BASE_WSS_URL}
+        - GOOGLE_CLIENT_ID=${GOOGLE_CLIENT_ID}
+    environment:
+      - NODE_ENV=development
+    env_file:
+      - .env
+    networks:
+      - NetPong
+    volumes:
+      - netpong_frontend_data:/usr/src/app/public # Updated volume mount
+    depends_on:
+      - backend
+
+#---------------------------------NGINX----------------------------------
+
+  nginx:
+    container_name: netpong_nginx
+    image: netpong_nginx 
+    build:
+      context: ./src/nginx
+      dockerfile: Dockerfile
+    networks:
+      - NetPong
+    ports:
+      - "8080:443"
+    volumes:
+      - netpong_frontend_data:/usr/share/nginx/html # Updated volume mount
+    depends_on:
+      - frontend
+    restart: always
+
+#-------------------------------PONG-CLI---------------------------------
+
+  pong-cli:
+    container_name: netpong_cli
+    image: netpong_cli
+    build:
+      context: ./src/pong-cli
+      dockerfile: Dockerfile
+    networks:
+      - NetPong
+    depends_on:
+      - backend
+
+#--------------------------------VOLUMES---------------------------------
+
+volumes:
+  netpong_sqlite_data:
+    name: netpong_sqlite_data 
+    driver: local
+  netpong_frontend_data:
+    name: netpong_frontend_data
+    driver: local
+  netpong_avatar_data:
+    name: netpong_avatar_data
+    driver: local
+
+#--------------------------------NETWORKS--------------------------------
+
+networks:
+  NetPong:
+    name: NetPong 
