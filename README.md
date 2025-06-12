@@ -34,7 +34,7 @@ Netpong is a **Dockerized, full-stack, Single Page Application**.
       * Command line tool for making locally trusted TLS certificate
   
 
-## Installation 
+## Installation Instructions
 
 Follow these steps to deploy Netpong on your local machine
 
