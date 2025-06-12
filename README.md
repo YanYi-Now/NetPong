@@ -17,7 +17,7 @@ Netpong is a **Dockerized, full-stack, Single Page Application**.
  * **Secure Communications (HTTPS/WSS)**: Encrypted all data in transit across the platform
  * **User Authentication**: Enabled secure sign-in by providing Google Sign-in or 2FA
 
-## Technologies Used
+## Built With
 
   * **Frontend**: TypeScript, Tailwind CSS, Webpack
   * **Backend**: Node.js (Fastify Framework), WebSockets, JWT, 2FA (via OTP), Google OAuth2
