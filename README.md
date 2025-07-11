@@ -1,5 +1,5 @@
 
-# Netpong: Remote Multiplayer Pong Game Platform
+# Netpong: Multiplayer Pong Game Platform
 
 Netpong is a **Dockerized, full-stack, web application**.  
 
@@ -7,7 +7,7 @@ Netpong is a **Dockerized, full-stack, web application**.
 
 ## Features
 ### Core Functions
-  * **Remote Live Matches**: Players are remotely synchronised to a server-side game engine via websockets
+  * **Remote Real-Time Matches**: Players are remotely synchronised to a server-side game engine via websockets
   * **Tournament System**: Host and compete in tournaments globally
   * **Social Features**: Add friends, view online statuses and global rankings
   * **Performance Analytics**: View your games statistics and match history in auto-generated dashboards
