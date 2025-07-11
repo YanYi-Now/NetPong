@@ -1,28 +1,29 @@
 
 # Netpong: Remote Multiplayer Pong Game Platform
 
-Netpong is a **Dockerized, full-stack, Single Page Application**.  
+Netpong is a **Dockerized, full-stack, web application**.  
 
-*Engage in live pong matches, authenticate securely, and climb global leaderboards.*
+*Compete in live pong matches, authenticate securely, and climb the leaderboards.*
 
 ## Features
 ### Core Functions
-  * **Real-time Remote Matches**: Players are synchronised to a server-side game engine via websockets
-  * **Tournament System**: Players can create and/or join tournaments featuring ELO-based matchmaking
-  * **Social Features**: Players can register individual accounts, follow each other and view online statuses
-  * **Performance Analytics**: Auto-generate dashboards to visualise players' individual statistics and match history
+  * **Remote Live Matches**: Players are remotely synchronised to a server-side game engine via websockets
+  * **Tournament System**: Host and compete in tournaments globally
+  * **Social Features**: Add friends, view online statuses and global rankings
+  * **Performance Analytics**: View your games statistics and match history in auto-generated dashboards
   
 ### Security 
- * **Secure Session Management**: Utilised pre-authentication, access, and refresh tokens to manages sessions
- * **Secure Communications (HTTPS/WSS)**: Encrypted all data in transit across the platform
- * **User Authentication**: Enabled secure sign-in by providing Google Sign-in or 2FA
+ * **User Authentication**: Secure log-in with 2FA and Google OAuth2 
+ * **Secure Session Management**: Pre-authentication, access, and refresh tokens manage login sessions
+ * **Secure Communication (HTTPS/WSS)**: All data in transit across the platform is encrypted
+ 
 
 ## Built With
 
   * **Frontend**: TypeScript, Tailwind CSS, Webpack
   * **Backend**: Node.js (Fastify Framework), WebSockets, JWT, 2FA (via OTP), Google OAuth2
   * **Database**: SQLite
-  * **Deployment/Infrastructure**: Docker, Docker Compose, Nginx, Cloudflared
+  * **Deployment**: Docker, Docker Compose, Nginx, Cloudflared
 
 
 ## Prerequisites
